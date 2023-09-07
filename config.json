@@ -1,0 +1,33 @@
+{
+  "resources": [
+    {
+      "kind": "GCP::Storage::Buckets",
+      "selector": {
+        "query": "true",
+        "gcp": {
+          "regions": ["us-east-1", "us-west-1"]
+        }
+      },
+      "port": {
+        "entity": {
+          "mappings": [
+            {
+              "identifier": ".id",
+              "title": ".name",
+              "blueprint": "gcp-bucket",
+              "icon": ".icon",
+              "team": [],
+              "properties": {
+                "link": ".selfLink",
+                "location": ".location",
+                "storageclass": ".storageClass",
+                "timecreated": ".timeCreated",
+                "lastupdatetime": ".updated",
+                "iamconfiguration": ".iamConfiguration"}
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
