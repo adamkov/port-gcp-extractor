@@ -1,3 +1,4 @@
+import json
 import logging
 import urllib.parse
 
@@ -28,6 +29,7 @@ class PortClient:
         logger.info(
             f"Upsert entity: {entity.get('identifier')} of blueprint: {blueprint_id}"
         )
+
         requests.post(
             f'{self.api_url}/blueprints/{urllib.parse.quote(blueprint_id, safe="")}/entities',
             json=entity,

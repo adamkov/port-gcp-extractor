@@ -28,6 +28,34 @@
           ]
         }
       }
+    },
+    {
+      "kind": "GCP::pubSub",
+      "selector": {
+        "query": "true",
+        "gcp": {
+          "regions": ["us-east-1", "us-west-1"]
+        }
+      },
+      "port": {
+        "entity": {
+          "mappings": [
+            {
+              "identifier": ".name",
+              "title": ".name",
+              "blueprint": "gcp-pub-sub-topic",
+              "icon": ".icon",
+              "team": [],
+              "properties": {
+                "retention_policy": ".message_retention_duration",
+                "schema_settings": ".schema_settings",
+                "storage_policy": ".message_storage_policy",
+                "topic_name": ".name"
+                }
+            }
+          ]
+        }
+      }
     }
   ]
 }
