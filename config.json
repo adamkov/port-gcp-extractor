@@ -14,7 +14,7 @@
             {
               "identifier": ".id",
               "title": ".name",
-              "blueprint": "gcp-bucket",
+              "blueprint": "gcp_bucket",
               "icon": ".icon",
               "team": [],
               "properties": {
@@ -43,7 +43,7 @@
             {
               "identifier": ".name",
               "title": ".name",
-              "blueprint": "gcp-pub-sub-topic",
+              "blueprint": "gcp_pub_sub_topic",
               "icon": ".icon",
               "team": [],
               "properties": {
@@ -52,6 +52,35 @@
                 "storage_policy": ".message_storage_policy",
                 "topic_name": ".name"
                 }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "kind": "GCP::VMInstance",
+      "selector": {
+        "query": "true",
+        "gcp": {
+          "regions": ["europe-west1-b", "us-west4-b"]
+        }
+      },
+      "port": {
+        "entity": {
+          "mappings": [
+            {
+              "identifier": ".name",
+              "title": ".name",
+              "blueprint": "gcp_vm_instance",
+              "icon": ".icon",
+              "team": [],
+              "properties": {
+                "link": ".self_link",
+                "status": ".status",
+                "zone": ".zone",
+                "topic_name": ".name",
+                "machine_type": ".machine_type"
+              }
             }
           ]
         }

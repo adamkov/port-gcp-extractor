@@ -7,3 +7,4 @@ jq==1.4.0
 pyyaml==6.0
 google-cloud-storage
 google-cloud-pubsub
+google-cloud-compute

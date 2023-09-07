@@ -19,6 +19,7 @@ class BaseHandler:
         selector = self.resource_config.get("selector", {})
         self.selector_query = selector.get("query")
         self.selector_gcp = selector.get("gcp", {})
+        self.regions = self.selector_gcp.get("regions", 'europe-west1-b')
         self.regions_config = self.selector_gcp.get("regions_config", {})
         self.next_token = self.selector_gcp.get("next_token", "") #Todo: understand what is the token
         self.mappings = (self.resource_config.get("port", {}).get("entity", {}).get("mappings", []))
